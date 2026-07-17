@@ -1,0 +1,109 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type CartItem {
+  id: Int!
+  productId: Int!
+  product: Product!
+  quantity: Int!
+}
+
+type Mutation {
+  addToCart(productId: Int! quantity: Int!): CartItem!
+  removeFromCart(cartItemId: Int!): Boolean!
+  updateCartItemQuantity(cartItemId: Int! quantity: Int!): CartItem
+}
+
+type Product {
+  id: Int!
+  name: String!
+  description: String!
+  price: Decimal!
+  category: String!
+  imageUrl: String!
+  stockQuantity: Int!
+}
+
+type Query {
+  products(where: ProductFilterInput order: [ProductSortInput!]): [Product!]!
+  product(id: Int!): Product
+  cartItems: [CartItem!]!
+  cartTotal: Decimal!
+}
+
+input DecimalOperationFilterInput {
+  eq: Decimal
+  neq: Decimal
+  in: [Decimal]
+  nin: [Decimal]
+  gt: Decimal
+  ngt: Decimal
+  gte: Decimal
+  ngte: Decimal
+  lt: Decimal
+  nlt: Decimal
+  lte: Decimal
+  nlte: Decimal
+}
+
+input IntOperationFilterInput {
+  eq: Int
+  neq: Int
+  in: [Int]
+  nin: [Int]
+  gt: Int
+  ngt: Int
+  gte: Int
+  ngte: Int
+  lt: Int
+  nlt: Int
+  lte: Int
+  nlte: Int
+}
+
+input ProductFilterInput {
+  and: [ProductFilterInput!]
+  or: [ProductFilterInput!]
+  id: IntOperationFilterInput
+  name: StringOperationFilterInput
+  description: StringOperationFilterInput
+  price: DecimalOperationFilterInput
+  category: StringOperationFilterInput
+  imageUrl: StringOperationFilterInput
+  stockQuantity: IntOperationFilterInput
+}
+
+input ProductSortInput {
+  id: SortEnumType
+  name: SortEnumType
+  description: SortEnumType
+  price: SortEnumType
+  category: SortEnumType
+  imageUrl: SortEnumType
+  stockQuantity: SortEnumType
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+"The built-in `Decimal` scalar type."
+scalar Decimal

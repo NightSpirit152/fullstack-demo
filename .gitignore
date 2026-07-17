@@ -1,0 +1,69 @@
+﻿# Node.js / npm (Frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite
+dist/
+dist-ssr/
+*.local
+
+# .NET / C# (Backend)
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio / Rider
+.vs/
+.vscode/
+*.rsuser
+*.userprefs
+*.DotSettings.user
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Generated files
+/frontend/src/graphql/*.generated.ts
+/frontend/src/graphql/types.ts
+/.idea/
