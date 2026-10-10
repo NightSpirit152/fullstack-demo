@@ -1,34 +1,35 @@
-# Каталог аптеки — Fullstack Demo
+# Pharmacy Catalog — Fullstack Demo
+en English | [🇷🇺 Русский](README.ru.md)
 
-Демонстрационный проект, показывающий связку **React + TypeScript + Apollo Client** (фронтенд) и **C#/.NET + HotChocolate GraphQL** (бэкенд) на примере каталога товаров аптеки и корзины покупок.
+A demo project showcasing a **React + TypeScript + Apollo Client** frontend and a **C#/.NET + HotChocolate GraphQL** backend using a pharmacy product catalog and shopping cart example.
 
-Стек намеренно повторяет технологии, использованные в реальном коммерческом проекте [yavapteke.ru](https://yavapteke.ru).
+The stack intentionally mirrors technologies used in a real commercial project: [yavapteke.ru](https://yavapteke.ru).
 
-## Функциональность
+## Features
 
-- Просмотр каталога товаров (GraphQL Query)
-- Добавление товара в корзину (GraphQL Mutation)
-- Изменение количества / удаление товара из корзины
-- Автоматический пересчёт итоговой суммы
-- Обработка ошибок (например, товар отсутствует на складе)
+- Browse the product catalog (GraphQL Query)
+- Add products to the cart (GraphQL Mutation)
+- Update quantity / remove items from the cart
+- Automatic total price recalculation
+- Error handling (for example, when a product is out of stock)
 
-## Стек
+## Tech Stack
 
 **Backend:** ASP.NET Core 8, HotChocolate GraphQL, Entity Framework Core
 **Frontend:** React 18, TypeScript, Apollo Client, Vite
-**Тесты:** xUnit (backend), Jest + React Testing Library (frontend)
+**Tests:** xUnit (backend), Jest + React Testing Library (frontend)
 
-## Структура проекта
+## Project Structure
 
-```
+```text
 graphql-fullstack-demo/
 ├── backend/
 │   ├── GraphqlDemo.Api/       # GraphQL API
 │   │   ├── Models/            # Product, CartItem
-│   │   ├── Data/              # DbContext, seed-данные
+│   │   ├── Data/              # DbContext, seed data
 │   │   ├── GraphQL/           # Query, Mutation
 │   │   └── Program.cs
-│   └── GraphqlDemo.Tests/     # xUnit тесты мутаций
+│   └── GraphqlDemo.Tests/     # xUnit tests for mutations
 └── frontend/
     └── src/
         ├── apollo/            # Apollo Client
@@ -37,7 +38,7 @@ graphql-fullstack-demo/
         └── types/
 ```
 
-## Запуск
+## Run
 
 ### Backend
 
@@ -47,7 +48,7 @@ dotnet restore
 dotnet run
 ```
 
-GraphQL-сервер поднимется на `http://localhost:5000/graphql`. Там же доступен Nitro — встроенный GraphQL IDE для ручного тестирования запросов.
+The GraphQL server will start at `http://localhost:5000/graphql`. Nitro, the built-in GraphQL IDE for manual query testing, is available there as well.
 
 ### Frontend
 
@@ -57,9 +58,9 @@ npm install
 npm run dev
 ```
 
-Приложение откроется на `http://localhost:5173`.
+The app will open at `http://localhost:5173`.
 
-### Тесты
+### Tests
 
 ```bash
 # Backend
@@ -69,7 +70,7 @@ cd backend/GraphqlDemo.Tests && dotnet test
 cd frontend && npm test
 ```
 
-## Пример запроса
+## Example Queries
 
 ```graphql
 query {

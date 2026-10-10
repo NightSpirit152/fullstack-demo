@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run codegen && vite",
     "schema:update": "node scripts/fetch-schema.js",
     "codegen": "graphql-codegen --config codegen.ts",
     "graphql": "npm run schema:update && npm run codegen",
